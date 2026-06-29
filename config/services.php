@@ -12,7 +12,7 @@ return [
     | location for this type of information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |
-    */
+    |*/
 
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
@@ -32,6 +32,23 @@ return [
         'notifications' => [
             'bot_user_oauth_token' => env('SLACK_BOT_USER_OAUTH_TOKEN'),
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
+        ],
+    ],
+
+    // Tambahkan blok firebase ini di sini, pastikan ada koma di baris slack sebelum ini
+    'firebase' => [
+        'projects' => [
+            'app' => [
+                'credentials' => [
+                    'type' => 'service_account',
+                    'project_id' => env('FIREBASE_PROJECT_ID'),
+                    'private_key' => str_replace('\n', "\n", env('FIREBASE_PRIVATE_KEY')),
+                    'client_email' => env('FIREBASE_CLIENT_EMAIL'),
+                ],
+                'database' => [
+                    'url' => env('FIREBASE_DATABASE_URL'),
+                ],
+            ],
         ],
     ],
 
