@@ -7,9 +7,6 @@
             "use": "vercel-php@0.7.3"
         }
     ],
-    "env": {
-        "COMPOSER_FLAGS": "--ignore-platform-req=ext-gmp"
-    },
     "routes": [
         {
             "src": "/build/(.*)",

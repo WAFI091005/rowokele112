@@ -84,6 +84,9 @@
         },
         "platform": {
             "php": "8.3.0"
+        },
+        "ignore-platform-reqs": {
+            "ext-gmp": "*"
         }
     },
     "minimum-stability": "stable",
