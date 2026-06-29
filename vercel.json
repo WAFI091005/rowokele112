@@ -4,9 +4,13 @@
     "builds": [
         {
             "src": "api/index.php",
-            "use": "vercel-php@0.6.1"
+            "use": "vercel-php@0.7.3",
+            "config": { "maxDuration": 60 }
         }
     ],
+    "config": {
+        "nodeVersion": "20.x"
+    },
     "routes": [
         {
             "src": "/build/(.*)",
